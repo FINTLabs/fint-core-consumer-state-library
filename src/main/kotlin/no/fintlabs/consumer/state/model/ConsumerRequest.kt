@@ -6,11 +6,11 @@ import no.fintlabs.consumer.state.interfaces.ConsumerIdentificator
 data class ConsumerRequest(
     override val domain: String,
     override val `package`: String,
-    override val managed: Boolean,
+    override val managed: Boolean = true,
     override val version: String,
     override val org: String,
-    override val podResources: PodResources,
-    override val resources: List<String>,
-    override val writeableResources: List<String>,
-    override val cacheDisabledResources: List<String>,
+    override val podResources: PodResources = PodResources(),
+    override val resources: List<String> = listOf(),
+    override val writeableResources: List<String> = listOf(),
+    override val cacheDisabledResources: List<String> = listOf(),
 ) : ConsumerIdentificator, ConsumerFields
