@@ -1,7 +1,6 @@
 package no.fintlabs.consumer.state.model
 
-import no.fintlabs.consumer.state.interfaces.ConsumerFields
-import no.fintlabs.consumer.state.interfaces.ConsumerIdentificator
+import no.fintlabs.consumer.state.interfaces.Consumer
 
 data class ConsumerRequest(
     override val domain: String,
@@ -13,4 +12,4 @@ data class ConsumerRequest(
     override val resources: List<String> = listOf(),
     override val writeableResources: List<String> = listOf(),
     override val cacheDisabledResources: List<String> = listOf(),
-) : ConsumerIdentificator, ConsumerFields
+) : Consumer
