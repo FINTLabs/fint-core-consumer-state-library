@@ -5,7 +5,6 @@ import no.fintlabs.consumer.state.interfaces.Consumer
 data class ConsumerRequest(
     override val domain: String,
     override val `package`: String,
-    override val managed: Boolean = true,
     override val version: String,
     override val org: String,
     override val podResources: PodResources = PodResources(),
