@@ -7,6 +7,7 @@ data class ConsumerRequest(
     override val `package`: String,
     override val version: String,
     override val org: String,
+    override val shared: Boolean = false,
     override val podResources: PodResources = PodResources(),
     override val resources: List<String> = listOf(),
     override val writeableResources: List<String> = listOf(),
