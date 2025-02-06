@@ -10,7 +10,7 @@ data class PodResources(
 
 @Embeddable
 data class Limits(
-    val memory: String = "1024Mi",
+    val memory: String = "512Mi",
     val cpu: String = "500m"
 )
 
