@@ -12,4 +12,18 @@ data class ConsumerRequest(
     override val resources: List<String> = listOf(),
     override val writeableResources: List<String> = listOf(),
     override val cacheDisabledResources: List<String> = listOf(),
-) : Consumer
+) : Consumer {
+    companion object {
+        fun fromConsumer(consumer: Consumer) = ConsumerRequest(
+            consumer.domain,
+            consumer.`package`,
+            consumer.version,
+            consumer.org,
+            consumer.shared,
+            consumer.podResources,
+            consumer.resources,
+            consumer.writeableResources,
+            consumer.cacheDisabledResources,
+        )
+    }
+}
