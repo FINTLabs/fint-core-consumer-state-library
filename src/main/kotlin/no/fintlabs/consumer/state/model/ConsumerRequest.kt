@@ -8,7 +8,10 @@ data class ConsumerRequest(
     override val version: String,
     override val org: String,
     override val shared: Boolean = false,
-    override val podResources: PodResources = PodResources(),
+    override val limitsCpu: String = "500m",
+    override val limitsMemory: String = "512Mi",
+    override val requestsCpu: String = "100m",
+    override val requestsMemory: String = "128Mi",
     override val resources: List<String> = listOf(),
     override val writeableResources: List<String> = listOf(),
     override val cacheDisabledResources: List<String> = listOf(),
@@ -20,10 +23,13 @@ data class ConsumerRequest(
             consumer.version,
             consumer.org,
             consumer.shared,
-            consumer.podResources,
+            consumer.limitsCpu,
+            consumer.limitsMemory,
+            consumer.requestsCpu,
+            consumer.requestsMemory,
             consumer.resources,
             consumer.writeableResources,
-            consumer.cacheDisabledResources,
+            consumer.cacheDisabledResources
         )
     }
 }
